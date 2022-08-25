@@ -1,0 +1,16 @@
+
+.header{
+    background-color:darkblue;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#home-btn{
+    margin-right: 20px;
+}
+h3{
+    margin-left: 20px;
+    color: white;
+    margin-top: 5px;
+}

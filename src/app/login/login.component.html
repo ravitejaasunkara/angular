@@ -1,0 +1,17 @@
+<div class="body">
+  <div class="form-body" [formGroup]="userform">
+    <h1>SIGN IN</h1>
+    <div class="validation-div" *ngIf="!userform.errors">
+      <li *ngIf="(f.username.errors && f.username.touched) || (uname ==null && f.username.touched)" class="text-danger"><a>Username is required</a></li>
+      <li *ngIf="(f.password.errors && f.password.touched) || (pword ==null && f.password.touched)" class="text-danger"><a>Password is required</a></li>
+      <li *ngIf="!valid" class="text-danger"><a>Username or Password is incorrect, Please check..!</a></li>
+    </div>
+    <label for="">USERNAME</label><input type="text" class="form-control" formControlName="username" id="user" [(ngModel)]="uname">
+    <label for="">PASSWORD</label><input type="text" class="form-control" formControlName="password" id="pwd" [(ngModel)]="pword">
+    <button class="btn btn-sm btn-secondary" id="sub-btn" (click)="onSubmit()">Submit</button>
+    <div id="info">
+      <p>RECOMMENDED BROWSERS</p>
+      <p>We recommend using Chrome or Firefox as your browser. Issues with display or functionality may occur in other browsres, including Safari.</p>
+    </div>
+  </div>
+</div>
