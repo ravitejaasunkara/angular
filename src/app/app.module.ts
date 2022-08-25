@@ -2,23 +2,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HttptestComponent } from './components/httptest/httptest.component';
-import { HttpClientModule } from '@angular/common/http';
-import { HtComponent } from './components/ht/ht.component';
-import { DatePipe } from '@angular/common';
+import { DizoComponent } from './components/dizo/dizo/dizo.component';
+import { HttpClientModule} from '@angular/common/http';
+import { FireboultComponent } from './components/fireboult/fireboult/fireboult.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HttptestComponent,
-    HtComponent,
+    DizoComponent,
+    FireboultComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    DatePipe
+    HttpClientModule
   ],
-  providers: [DatePipe],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
