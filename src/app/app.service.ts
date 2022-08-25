@@ -10,7 +10,7 @@ export class AppService {
   constructor(private http:HttpClient) { }
 
   getData(){
-    return this.http.get('https://jsonplaceholder.typicode.com/posts')
+    return this.http.get<any[]>('https://jsonplaceholder.typicode.com/posts')
     .pipe(catchError(this.errorHandler))
   }
   errorHandler(error: HttpErrorResponse){
