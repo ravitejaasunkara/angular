@@ -1,16 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { DatePipe } from '@angular/common';
+// app.component.ts
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  constructor(private datePipe:DatePipe){}
-  title = 'a1';
-  mydate:string='2015-04-04T14:45:27.863+00:00';
-  ngOnInit(){
-    //console.log(this.datePipe.transform('','long')?.slice(0,-2));
+export class AppComponent {
+  title = 'angular-http-spinner-loader';
+
+  constructor(private http: HttpClient) {}
+
+  getIMDBData() {
+    return this.http
+    .get<any>('http://www.omdbapi.com/?apikey=YOUR_OMDB_KEY&s=car')
+    .subscribe((response) => {
+      console.log(response);
+    }, (error) => {
+      alert('Error Found!');
+    });
   }
 }
