@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttptestComponent } from './components/httptest/httptest.component';
+
 import { HttpClientModule } from '@angular/common/http';
-import { HtComponent } from './components/ht/ht.component';
-import { DatePipe } from '@angular/common';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HttptestComponent,
-    HtComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
-    DatePipe
+    NgHttpLoaderModule.forRoot()
   ],
-  providers: [DatePipe],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
